@@ -1,0 +1,13 @@
+<mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title style="justify-content: center">
+        {{titlepanel}}
+      </mat-panel-title>      
+    </mat-expansion-panel-header>
+
+    <div *ngFor="let formField of formFields" class="form-group">
+          
+        <app-switchmaterial [input]="formField" [form]="form"></app-switchmaterial>
+    </div>
+
+</mat-expansion-panel>

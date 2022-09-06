@@ -1,0 +1,42 @@
+<mat-card>
+    <h2>Filtros</h2>
+    <form [formGroup]="getEquipmentsForm" (ngSubmit)="getEquipments()" >
+      <mat-form-field>
+        businessUnitId
+        <input matInput placeholder="Id" type="Number" style="background-color:lightgray;"formControlName="businessUnitId" />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        paginationCount
+        <input matInput placeholder="count" type="Number" style="background-color:lightgray;" formControlName="paginationCount" />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        paginationPage
+        <input matInput placeholder="page" type="Number" style="background-color:lightgray;"formControlName="paginationPage" />
+      </mat-form-field>
+      <br />
+      <button [disabled]="!getEquipmentsForm.valid" mat-raised-button type="submit">
+        Pesquisar
+      </button>
+    </form>
+  </mat-card>
+
+  <mat-card>
+    <h2>Lista de Equipamentos</h2>
+    <ng-container *ngFor="let element of equipmentList.returnValue.elements">
+      {{ element.equtDescription }} --
+      {{ element.equDescription }}  --
+      {{ element.equSerialNumber }} --
+      {{ element.equReference }} --
+      {{ element.equsDescription }} --
+      {{ element.equIPAddress }} --
+      {{ element.bsuDescription }}<br />
+    </ng-container>     
+  </mat-card>   
+  
+  <mat-card>
+    <tr>
+        <td>TOTAL: {{ equipmentList.returnValue.totalCount }}</td>
+    </tr>
+  </mat-card>  

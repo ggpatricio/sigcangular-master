@@ -1,0 +1,24 @@
+<div [formGroup]="form" class="form-group">
+
+
+    <container-element [ngSwitch]="input.type" class="divbox">
+
+      <div *ngSwitchCase="'textbox'" class="divcolumn">
+         <app-textbox [input]="input" [form]="form"></app-textbox>
+      </div>       
+
+      <div *ngSwitchCase="'checkbox'" class="divcolumn">
+         <app-checkbox [input]="input" [form]="form"></app-checkbox>         
+      </div>      
+
+      <div *ngSwitchCase="'datepicker'" class="divcolumn">
+       <app-datepicker [input]="input" [form]="form"></app-datepicker>       
+      </div>
+
+      <div *ngSwitchCase="'select'" class="divcolumn">
+       <app-select [input]="input" [form]="form"></app-select>      
+      </div>
+
+    </container-element>
+
+</div>

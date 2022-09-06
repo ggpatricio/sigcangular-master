@@ -1,0 +1,30 @@
+<div class="sidebar-container">
+    <mat-toolbar>
+      <button class="button-icon-menu" mat-icon-button  (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div >        
+        <h2 class="h2">home 123</h2>
+     </div>
+     <span class="sidebyside"></span>
+     <div >
+      <img  class="userImage" mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" (click)="Toggle()">
+     </div>
+    </mat-toolbar>
+    <mat-sidenav-container class="sidebar-sidenav-container">
+      <mat-sidenav #snav mode="over" fixedTopGap="56" opened="false">
+        <app-navbar>          
+        </app-navbar>       
+      </mat-sidenav>      
+     <div style="margin: 20px">
+     
+      <app-headerconsult></app-headerconsult> 
+      
+      <app-searchconsult label="Pesquisa"></app-searchconsult>   
+      <app-table></app-table>  
+        <!--<app-createform title="Create..."></app-createform>-->
+      </div>
+    </mat-sidenav-container>
+  </div>
+
+  
